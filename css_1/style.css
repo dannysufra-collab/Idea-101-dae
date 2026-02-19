@@ -1,0 +1,100 @@
+const style = document.createElement('style');
+style.textContent = `
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to top, #001f3f, #004d73);
+    color: #fff;
+    overflow: hidden;
+  }
+  .aurora {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, rgba(0,255,191,0.3), transparent 70%),
+                radial-gradient(ellipse at top, rgba(0,128,255,0.4), transparent 80%);
+    animation: moveAurora 10s ease-in-out infinite alternate;
+  }
+  @keyframes moveAurora {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
+  }
+  .title {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 3em;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #ccf2ff;
+  }
+  .buttons {
+    text-align: center;
+    margin-top: 60px;
+  }
+  .btn {
+    background-color: #00b3b3;
+    border: none;
+    padding: 15px 40px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #33cccc;
+    transform: scale(1.05);
+  }
+  footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    color: #b3e0ff;
+  }
+`;
+document.head.appendChild(style);
+// ----- Create aurora background -----
+const aurora = document.createElement('div');
+aurora.classList.add('aurora');
+document.body.appendChild(aurora);
+// ----- Create title -----
+const title = document.createElement('h1');
+title.classList.add('title');
+title.textContent = 'Arctic Spirit Adventure';
+document.body.appendChild(title);
+// ----- Create subtitle -----
+const subtitle = document.createElement('p');
+subtitle.classList.add('subtitle');
+subtitle.textContent = 'Discover the wisdom of the Arctic – guided by the stories of Indigenous elders.';
+document.body.appendChild(subtitle);
+// ----- Create button container -----
+const btnContainer = document.createElement('div');
+btnContainer.classList.add('buttons');
+// Start Button
+const startBtn = document.createElement('button');
+startBtn.classList.add('btn');
+startBtn.textContent = 'Start Journey';
+startBtn.addEventListener('click', () => {
+  alert('Your Arctic journey begins! Explore and learn the ancient wisdom.');
+});
+// Credits Button
+const creditBtn = document.createElement('button');
+creditBtn.classList.add('btn');
+creditBtn.textContent = 'Credits';
+creditBtn.addEventListener('click', () => {
+  alert('Developed with respect for Inuit, Sámi, and Arctic Indigenous cultures.');
+});
+// Append buttons to container
+btnContainer.append(startBtn, creditBtn);
+document.body.appendChild(btnContainer);
+// ----- Create footer -----
+const footer = document.createElement('footer');
+footer.textContent = '© 2024 Arctic Dream Interactive | Inspired by Indigenous Arctic cultures';
+document.body.appendChild(footer);

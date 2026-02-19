@@ -1,0 +1,81 @@
+/* ==== GLOBAL STYLES ==== */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to top, #001f3f, #004d73);
+      color: #ffffff;
+      overflow: hidden;
+    }
+    /* ==== BACKGROUND ELEMENTS ==== */
+    .aurora {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at bottom, rgba(0,255,191,0.3), transparent 70%),
+                  radial-gradient(ellipse at top, rgba(0,128,255,0.4), transparent 80%);
+      animation: moveAurora 10s ease-in-out infinite alternate;
+    }
+    @keyframes moveAurora {
+      from { transform: translateY(0); }
+      to { transform: translateY(-20px); }
+    }
+    .snow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: url('https://www.transparenttextures.com/patterns/snow.png');
+      animation: snowFall 15s linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes snowFall {
+      from { background-position: 0 0; }
+      to { background-position: 0 1000px; }
+    }
+    /* ==== LOGO & TEXT ==== */
+    .title {
+      text-align: center;
+      margin-top: 10%;
+      font-size: 3em;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      opacity: 0.9;
+      margin-top: 10px;
+      color: #ccf2ff;
+    }
+    /* ==== BUTTONS ==== */
+    .buttons {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .btn {
+      background-color: #00b3b3;
+      border: none;
+      padding: 15px 40px;
+      margin: 10px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #33cccc;
+      transform: scale(1.05);
+    }
+    /* ==== FOOTER ==== */
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+      color: #b3e0ff;
+    }
